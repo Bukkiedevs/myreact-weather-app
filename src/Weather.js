@@ -3,14 +3,20 @@ import "./App.css";
 import axios from "axios";
 
 export default function Weather() {
-  const [set, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+  const [weather, setWeather] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
-    setReady(true);
+    setWeather({
+      ready: true,
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      city: response.data.name,
+      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      description: response.data.weather[0].description,
+    });
   }
-  if (set) {
+  if (weather.ready) {
     return (
       <div className="Weather">
         <form>
@@ -32,27 +38,29 @@ export default function Weather() {
             </div>
           </div>
         </form>
-        <h1>Stockholm </h1>
+        <h1>{weather.city} </h1>
         <ul>
           <li>Tuesday 2:24</li>
-          <li>Sunny</li>
+          <li className="text-capitalize">{weather.description}</li>
         </ul>
         <div className="row mt-3">
           <div className="col-6">
             <div className="clearfix">
               <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="cloudy"
+                src={weather.iconUrl}
+                alt={weather.description}
                 className="float-left mb-4"
               />{" "}
-              <span className="temperature">{Math.round(temperature)}</span>{" "}
+              <span className="temperature">
+                {Math.round(weather.temperature)}
+              </span>{" "}
               <span className="unit">°C</span>
             </div>
           </div>
           <div className="col-6">
             <ul>
-              <li>Humidity</li>
-              <li>Wind</li>
+              <li>Humidity:{weather.humidity}%</li>
+              <li>Wind:{weather.wind}km/h</li>
             </ul>
           </div>
         </div>

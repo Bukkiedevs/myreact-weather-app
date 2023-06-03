@@ -36,7 +36,6 @@
   font-size: 54px;
   color: rgb(33, 33, 33);
   line-height: 64px;
-  margin-left: 10px;
 }
 .Weather img {
   height: 64px;
@@ -50,5 +49,4 @@
   font-weight: 400;
   color: rgb(33, 33, 33);
   line-height: 1;
-  margin-right: 5px;
 }
