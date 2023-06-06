@@ -3,7 +3,7 @@
   border: 1px solid #dadde1;
   color: rgb(135, 135, 135);
   padding: 16px;
-  margin: 30px auto;
+
   border-radius: 4px;
   background-color: antiquewhite;
 }
@@ -26,7 +26,7 @@
 
 .App {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .App footer {
   font-size: 11px;
@@ -45,7 +45,7 @@
 }
 .Weather .unit {
   position: relative;
-  top: -34px;
+  top: -30px;
   font-size: 16px;
   font-weight: 400;
   color: rgb(33, 33, 33);
