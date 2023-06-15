@@ -11,11 +11,12 @@ export default function Weather(props) {
     console.log(response.data);
     setWeather({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       city: response.data.name,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
     });
@@ -56,7 +57,7 @@ export default function Weather(props) {
           </div>
         </form>
         <Weatherinfo info={weather} />
-        <Weatherforecast />
+        <Weatherforecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
