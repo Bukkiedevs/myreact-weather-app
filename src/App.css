@@ -3,11 +3,11 @@
   border: 1px solid #dadde1;
   color: rgb(135, 135, 135);
   padding: 16px;
-  border-radius: 45px 4px;
-  background-color: antiquewhite;
+  border-radius: 4px;
+  background-color: white;
 }
 .Weather h1 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 100;
   line-height: 29px;
   margin: 20px 0 0 0;
@@ -23,6 +23,14 @@
   padding: 0;
 }
 
+.overall {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: burlywood;
+  margin-top: 100px;
+  border-radius: 40px 10px;
+  padding: 50px 0px 50px 0px;
+}
 .App {
   max-width: 600px;
   margin: 30px auto;
