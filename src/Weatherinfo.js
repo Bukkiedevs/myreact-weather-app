@@ -12,11 +12,11 @@ export default function Weatherinfo(props) {
         </li>
         <li className="text-capitalize">{props.info.description}</li>
       </ul>
-      <div className="row mt-3">
+      <div className="row mt-4">
         <div className="col-6">
           <div className="clearfix">
             <div className="float-left">
-              <Weathericon code={props.info.icon} size={52} />
+              <Weathericon code={props.info.icon} size={65} />
               <span className="temperature">
                 {Math.round(props.info.temperature)}
               </span>{" "}
